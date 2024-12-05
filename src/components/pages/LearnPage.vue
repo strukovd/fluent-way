@@ -50,6 +50,28 @@
 				<p class="sentence">Once upon a time, there was a very <span contenteditable class="missing-word correct">grand</span> palace. It was so <span contenteditable class="missing-word correct">pretty</span> that it <span contenteditable class="missing-word correct">aroused</span> the interest of everyone who saw it. But the palace was owned by a very <span contenteditable class="missing-word">lazy</span> king. He never <span contenteditable class="missing-word">coped</span> with his responsibilities and soon the palace began to <span contenteditable class="missing-word">decay</span>.</p>
 			</section>
 		</article>
+
+		<hr>
+
+		<article class="dialogue">
+			<header class="list-of-words-to-study">
+				Используемые слова:
+				<div v-for="word of words" :key="word.name">{{ word.name }}</div>
+
+				<div>Контекст диалога: В магазине</div>
+			</header>
+			<section class="exercise">
+				<ol>
+					<li class="sentence">Rachel: I can't answer even simple questions. I don't think she is <span contenteditable class="missing-word">intelligent</span>.</li>
+					<li class="sentence">Melania: She is so <span contenteditable class="missing-word wrong" data-translation="добрая">kind</span>! She helps everybody.</li>
+					<li class="sentence">Mark: I don't like Jonathan. He is so <span contenteditable class="missing-word">serious</span>! He never smiles!</li>
+					<li class="sentence">Mark: It's important to be <span contenteditable class="missing-word">creative</span> if you want to work as a designer.</li>
+				</ol>
+
+				Кратко перескажите о чем речь в диалоге
+				<textarea rows="3" cols="50" placeholder="Кратко перескажите о чем речь в диалоге"></textarea>
+			</section>
+		</article>
 	</div>
 </template>
 

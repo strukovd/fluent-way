@@ -5,7 +5,7 @@
 		</section>
 		<section id="right-side">
 			<header>
-				<Header/>
+				<!-- <Header/> -->
 			</header>
 			<main id="main-page">
 				<router-view :key="$route.fullPath" />
@@ -17,14 +17,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Header from '@/components/common/Header.vue';
-import SideBar from '@/components/common/SideBar.vue';
+// import Header from '@/components/common/Header.vue';
+// import SideBar from '@/components/common/SideBar.vue';
 
 export default defineComponent({
 	name: 'MainLayout',
 	component: {
-		Header,
-		SideBar
+		// Header,
+		// SideBar
 	},
 	data() {
 		return {};

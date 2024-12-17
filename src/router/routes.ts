@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from "vue-router";
-import LoginPage from "../components/pages/LoginPage.vue";
+// import LoginPage from "../components/pages/LoginPage.vue";
 import MainPage from "../components/pages/HomePage.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -14,16 +14,16 @@ const routes: Array<RouteRecordRaw> = [
 		},
 	},
 
-	{
-		path: "/login",
-		name: "login",
-		component: LoginPage,
-		meta: {
-			public: true,
-			title: `Авторизация`,
-			layout: "DefaultLayout",
-		},
-	},
+	// {
+	// 	path: "/login",
+	// 	name: "login",
+	// 	component: LoginPage,
+	// 	meta: {
+	// 		public: true,
+	// 		title: `Авторизация`,
+	// 		layout: "DefaultLayout",
+	// 	},
+	// },
 
 	{
 		path: "/vocabulary",

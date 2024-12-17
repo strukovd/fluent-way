@@ -59,7 +59,7 @@ export default defineComponent({
 	data() {
 		return {
 			navOpen: false,
-			logo,
+			// logo,
 			navigation: [
 				{ title: 'Административная панель', id: 1, path: '/', icon: 'admin' },
 				{ title: 'Статистика', id: 2, path: '/', icon: 'statistics' },

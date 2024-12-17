@@ -5,7 +5,7 @@ export const useAppStore = defineStore('app', {
 	state: () => ({
 		loading: true,
 
-		modals: [] as ModalModel[],
+		// modals: [] as ModalModel[],
 
 		// snackbar: {
 		// 	show: false,

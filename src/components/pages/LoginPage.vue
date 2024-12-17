@@ -40,16 +40,16 @@ export default defineComponent({
 	methods: {
 		login() {
 			const { username, password } = this;
-			this.$http.post('/auth/login', { username, password })
-				.then(({ data }) => {
-					localStorage.setItem('token', data.accessToken);
-					this.$router.push('/');
-				})
-				.catch((error) => {
-					this.snackbar.show = true;
-					this.snackbar.color = `red`;
-					this.snackbar.msg = error.response.data?.error || error.message;
-				});
+			// this.$http.post('/auth/login', { username, password })
+			// 	.then(({ data }) => {
+			// 		localStorage.setItem('token', data.accessToken);
+			// 		this.$router.push('/');
+			// 	})
+			// 	.catch((error) => {
+			// 		this.snackbar.show = true;
+			// 		this.snackbar.color = `red`;
+			// 		this.snackbar.msg = error.response.data?.error || error.message;
+			// 	});
 		}
 
 	},

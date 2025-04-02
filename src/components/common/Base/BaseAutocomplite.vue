@@ -346,9 +346,11 @@ export default defineComponent({
 				outline: none;
 				font-size: 16px;
 				box-sizing: border-box;
-				background: transparent;
 				// padding:.5em .7em;
 				padding: 0.4em .4em;
+
+				background-color: transparent;
+				border-style: none;
 
 				&.selected {
 					opacity:.6;

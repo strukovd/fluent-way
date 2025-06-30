@@ -6,8 +6,6 @@
 
 		<h1 style="color:#0a2145;">Пользовательский словарь</h1>
 		<BaseAutocomplite :items="words" :autoselect="true" :multiple="true" @change="onSearch" @update:modelValue="onSearch" placeholder="Поиск" />
-		<input class="search" placeholder="Поиск" type="text"/>
-		<LearningProgress name="progress" v-for="word of words" :key="word.name" />
 
 		<section class="tags">
 			<div class="tag" v-for="(tag, index) of tags" :key="tag.key" :class="{ 'selected': index === 4 }">
@@ -23,6 +21,8 @@
 			</div>
 		</section> -->
 
+
+
 		<section class="words-list">
 			<div class="word" v-for="word of words" :key="word.name" style="display:flex;">
 				<div class="word-left-side">
@@ -30,38 +30,12 @@
 					<section>
 						<!-- <div class="word-types"><span v-for="i of 2" :key="i">Глагол</span></div> -->
 						<div class="word-name">{{ word.name }}</div>
-						<div class="word-forms" style="
-							display: flex;
-							gap: .4em;
-							font-size: .9em;
-						">
-							<div title="V1 is the base form of the verb" style="
-							background: #eaeaea;
-							border-radius: 4px;
-							padding: .2em .6em;
-						">Arise</div>
-							<div title="V2 is the simple past form; it is formed by adding -ed to the base form" style="
-							background: #eaeaea;
-							border-radius: 4px;
-							padding: .2em .6em;
-						">Arose</div>
-							<div title="V3 is the past participle form; it is formed by adding -ed to the base form" style="
-							background: #eaeaea;
-							border-radius: 4px;
-							padding: .2em .6em;
-						">Arisen</div>
-							<div title="V4 is the third-person singular present form; it is formed by adding -s to the base form" style="
-							background: #2186eb1f;
-							border-radius: 4px;
-							padding: .2em .6em;
-							color: #2265a9;
-						">Arises</div>
-							<div title="V5 is the present participle form; it is formed by adding -ing to the base form" style="
-								background: #b921eb1f;
-								border-radius: 4px;
-								padding: .2em .6em;
-								color: #a122a9;
-						">Arising</div>
+						<div class="word-forms">
+							<div class="word-form v1" title="V1 is the base form of the verb">Arise</div>
+							<div class="word-form v2" title="V2 is the simple past form; it is formed by adding -ed to the base form">Arose</div>
+							<div class="word-form v3" title="V3 is the past participle form; it is formed by adding -ed to the base form">Arisen</div>
+							<div class="word-form v4" title="V4 is the third-person singular present form; it is formed by adding -s to the base form">Arises</div>
+							<div class="word-form v5" title="V5 is the present participle form; it is formed by adding -ing to the base form">Arising</div>
 						</div>
 					</section>
 				</div>
@@ -69,7 +43,7 @@
 					<section>
 						<div class="word-types">
 							<template v-for="wordType of [`Глагол`, `Существительное`, `Местоимение`]" :key="wordType">
-								<div class="word-type" v-if="Math.random() < 0.5">{{ wordType }}</div>
+								<div class="word-type" :data-text="wordType" v-if="Math.random() < 0.5"></div>
 							</template>
 						</div>
 						<div class="word-translations">
@@ -112,6 +86,9 @@ export default defineComponent({
 						{ key: `conditional-verbs`, name: `Условные глаголы` },
 						{ key: `imperative-verbs`, name: `Императивные глаголы` },
 						{ key: `participle-verbs`, name: `Частица` },
+						// { key: `transitive`, name: `Транзитивные` },
+						// { key: `intransitive`, name: `Интранзитивные` },
+						// { key: `regular`, name: `Регулярные` },
 					]
 				},
 				{ key: `adjectives`, name: `Прилагательные`, icon: `<svg style="vertical-align:middle; stroke:currentColor;" width="1.4em" height="1.4em" viewBox="1 2 33 30"><path d="M 9.648 3.888 A 0.144 0.144 90 0 0 10.224 13.392 A 0.144 0.144 90 0 0 9.648 3.888 Z M 18.72 13.968 C 17.136 12.816 12.528 13.824 12.96 16.272 L 21.312 28.512 L 21.456 34.128 L 18 41.76 C 17.28 43.92 20.016 45.936 21.888 44.064 L 25.92 35.568 L 26.064 31.68 L 29.376 35.712 L 28.512 42.048 C 28.512 45.072 32.4 45.648 32.976 42.768 L 34.56 34.272 L 30.96 29.952 M 14.832 19.008 L 20.88 24.192 L 30.096 29.52 C 31.68 30.24 34.128 28.08 32.112 26.208 L 24.624 22.32 L 18.576 17.424 M 21.888 15.408 L 35.568 9.216 L 42.048 22.608 L 33.408 26.784 L 25.056 22.032 Z M 15.408 2.736 C 16.272 1.584 17.856 1.008 19.44 1.584 C 20.016 3.888 16.416 2.16 15.408 2.736 Z M 3.6 11.952 C 3.6 13.536 4.032 14.688 3.6 15.552 C 3.312 16.272 2.592 16.416 2.304 15.552 C 2.016 14.4 2.16 12.96 3.6 11.952 Z" stroke-width="1.6" fill="none"/></svg>` },
@@ -166,6 +143,10 @@ export default defineComponent({
 			else if (word.progress > 87) {
 				return 'check-green';
 			}
+		},
+
+		fetchWords() {
+			this.$
 		}
 	},
 });
@@ -230,6 +211,27 @@ export default defineComponent({
 					padding:.2em 0;
 					// line-height:1.6em;
 				}
+
+				.word-forms {
+					display: flex;
+					gap: .4em;
+					font-size: .9em;
+
+					.word-form {
+						background: #eaeaea;
+						border-radius: 4px;
+						padding: .2em .6em;
+
+						&.v4 {
+							background: #2186eb1f;
+							color: #2265a9;
+						}
+						&.v5 {
+							background: #b921eb1f;
+							color: #a122a9
+						}
+					}
+				}
 			}
 			.word-right-side {
 				display:flex;
@@ -243,25 +245,66 @@ export default defineComponent({
 					align-items: end;
 					font-size:.8em;
 					font-weight:400;
-					opacity:.8;
+					// opacity:.8;
 
 					.word-type {
+						&::before {
+							content: attr(data-text);
+						}
+
 						&:not(:first-child) {
 							margin-left:.3em;
 						}
-						// vertical-align: baseline;
 						display: inline-block;
 						line-height: 1.4em;
-						border-radius: 4px;
 						padding:0 .6em;
-
-						border-width:0 0 4px 0;
+						border-width:0 0 0 3px;
+						border-radius: 3px;
 						border-style: solid;
 						border-color: #09b35a;
-						// border-left: 4px solid #09b35a;
-						background:#00000008;
 						color: #339c64;
+						background:#00000008;
 
+						&[data-text="Существительное"] {
+							border-color: #2186eb;
+							color: #2186eb;
+						}
+						&[data-text="Глагол"] {
+							border-color: #09b35a;
+							color: #339c64;
+						}
+						&[data-text="Прилагательное"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Наречие"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Предлог"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Местоимение"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Союз"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Числительное"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Определительное"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
+						&[data-text="Междометие"] {
+							border-color: #e34747;
+							color: #db2626;
+						}
 					}
 				}
 				.word-translations {

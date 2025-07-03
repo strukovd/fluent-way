@@ -1,4 +1,4 @@
-package ru.strukovd.eng.services;
+package ru.strukovd.fluentway.services;
 
 import lombok.Getter;
 import org.springframework.stereotype.Service;

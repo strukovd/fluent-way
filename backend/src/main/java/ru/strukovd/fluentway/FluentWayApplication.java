@@ -1,13 +1,13 @@
-package ru.strukovd.eng;
+package ru.strukovd.fluentway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EngApplication {
+public class FluentWayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EngApplication.class, args);
+		SpringApplication.run(FluentWayApplication.class, args);
 	}
 
 }

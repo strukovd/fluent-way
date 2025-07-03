@@ -1,4 +1,4 @@
-package ru.strukovd.eng.entities;
+package ru.strukovd.fluentway.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package ru.strukovd.eng.exceptions;
+package ru.strukovd.fluentway.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;

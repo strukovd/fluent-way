@@ -1,10 +1,10 @@
-package ru.strukovd.eng.controllers;
+package ru.strukovd.fluentway.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.strukovd.eng.dtos.WordDto;
-import ru.strukovd.eng.services.WordService;
+import ru.strukovd.fluentway.dtos.WordDto;
+import ru.strukovd.fluentway.services.WordService;
 
 import java.util.List;
 

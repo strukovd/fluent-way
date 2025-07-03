@@ -1,8 +1,8 @@
-package ru.strukovd.eng.mappers;
+package ru.strukovd.fluentway.mappers;
 
 import org.mapstruct.Mapper;
-import ru.strukovd.eng.dtos.WordDto;
-import ru.strukovd.eng.entities.WordEntity;
+import ru.strukovd.fluentway.dtos.WordDto;
+import ru.strukovd.fluentway.entities.WordEntity;
 
 @Mapper(componentModel = "spring")
 public interface WordMapper {

@@ -1,10 +1,10 @@
-package ru.strukovd.eng;
+package ru.strukovd.fluentway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EngApplicationTests {
+class FluentWayApplicationTests {
 
 	@Test
 	void contextLoads() {

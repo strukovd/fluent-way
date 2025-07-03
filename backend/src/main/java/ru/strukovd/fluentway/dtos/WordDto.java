@@ -1,4 +1,4 @@
-package ru.strukovd.eng.dtos;
+package ru.strukovd.fluentway.dtos;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

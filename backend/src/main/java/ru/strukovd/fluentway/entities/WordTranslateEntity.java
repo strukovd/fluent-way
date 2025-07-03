@@ -1,8 +1,8 @@
-package ru.strukovd.eng.entities;
+package ru.strukovd.fluentway.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import ru.strukovd.eng.enums.PartOfSpeech;
+import ru.strukovd.fluentway.enums.PartOfSpeech;
 
 @Entity
 @Table(name = "word_translate")

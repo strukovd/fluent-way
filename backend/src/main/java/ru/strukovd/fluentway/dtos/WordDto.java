@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 public class WordDto {
-    private int id;
+    private Long id;
     private String key;
-
 
     @NotNull(message = "Word is required")
     private String word;

@@ -21,6 +21,10 @@ public class WordEntity {
 //
 //    private String audioUrl;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    /*
+    insertable = false (говорит Hibernate не вставлять это поле, а база сама подставит now())
+    updatable = false — чтобы Hibernate не пытался обновить это поле
+    */
+    @Column(name = "created", insertable = false, updatable = false, columnDefinition = "timestamp default now()")
+    private LocalDateTime created;
 }

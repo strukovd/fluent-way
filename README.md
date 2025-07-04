@@ -1,4 +1,8 @@
-# english-trainer
+<h1>
+	<img src="./fw-logo.svg" height="30">&nbsp<span>Fluent Way</span>
+</h1>
+
+
 
 Сделать:
 

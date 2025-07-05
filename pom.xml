@@ -8,8 +8,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>core</module>
-        <module>client</module>
+        <module>backend/core</module>
+        <module>backend/client</module>
     </modules>
 
     <properties>

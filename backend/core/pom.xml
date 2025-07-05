@@ -6,7 +6,7 @@
         <groupId>ru.strukovd</groupId>
         <artifactId>fluent-way</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <relativePath>../..</relativePath>
     </parent>
 
     <artifactId>core</artifactId>

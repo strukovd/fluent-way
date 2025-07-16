@@ -1,16 +1,17 @@
 import type { RouteRecordRaw } from "vue-router";
 import LoginPage from "../components/pages/LoginPage.vue";
-import MainPage from "../components/pages/HomePage.vue";
+import WelcomePage from "../components/pages/WelcomePage.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
-		path: "/",
+		path: "/welcome",
+		alias: "/",
 		name: "main",
-		component: MainPage,
+		component: WelcomePage,
 		meta: {
 			public: false,
 			title: `Главная`,
-			layout: "DefaultLayout",
+			layout: "WelcomeLayout",
 		},
 	},
 

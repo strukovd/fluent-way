@@ -23,12 +23,14 @@ import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 import { useAppStore, useUserStore } from '@/stores';
 import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
+import WelcomeLayout from '@/components/layouts/WelcomeLayout.vue';
 import MainLayout from '@/components/layouts/MainLayout.vue';
 
 export default defineComponent({
 	components: {
 		MainLayout,
 		DefaultLayout,
+		WelcomeLayout,
 	},
 	computed: {
 		...mapStores(useAppStore, useUserStore),

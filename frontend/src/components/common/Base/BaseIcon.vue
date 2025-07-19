@@ -42,7 +42,7 @@ export default defineComponent({
 	methods: {
 		async loadIcon(iconName: string) {
 			try {
-				const response = await fetch(`/icons/${iconName}.svg`);
+				const response = await fetch(`${import.meta.env.BASE_URL}/icons/${iconName}.svg`);
 				if (!response.ok) throw new Error('Icon not found');
 				this.svgContent = await response.text();
 			} catch (error) {

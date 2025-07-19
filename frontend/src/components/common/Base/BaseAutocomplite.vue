@@ -70,6 +70,7 @@ export default defineComponent({
 		modelValue: [String, Number] as any,
 		label: String,
 		placeholder: String,
+		prependIcon: String,
 		appendIcon: String,
 		items: Array as () => any[],
 		autoselect: Boolean,

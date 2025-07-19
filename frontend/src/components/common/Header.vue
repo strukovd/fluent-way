@@ -59,7 +59,7 @@ export default defineComponent({
 	data() {
 		return {
 			navOpen: false,
-			logo,
+			// logo,
 			navigation: [
 				{ title: 'Административная панель', id: 1, path: '/', icon: 'admin' },
 				{ title: 'Статистика', id: 2, path: '/', icon: 'statistics' },
@@ -165,15 +165,15 @@ export default defineComponent({
 	}
 
 	.admin {
-		background-image: url('@/assets/admin-icon.svg');
+		// background-image: url('@/assets/admin-icon.svg');
 	}
 
 	.statistics {
-		background-image: url('@/assets/icon-carrier.svg');
+		// background-image: url('@/assets/icon-carrier.svg');
 	}
 
 	.chat {
-		background-image: url('@/assets/chat.svg');
+		// background-image: url('@/assets/chat.svg');
 	}
 }
 

@@ -136,6 +136,10 @@ export default defineComponent({
 		};
 	},
 	methods: {
+		onSearch(search: string) {
+			// ...
+		},
+
 		defineIcon(word: any) {
 			if (word.progress > 100) {
 				return 'check-blue';

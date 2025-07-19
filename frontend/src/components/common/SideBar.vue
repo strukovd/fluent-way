@@ -95,7 +95,7 @@ export default {
 	// flex-direction: column;
 	.logo {
 		background: #0079C1; // #1852E0;
-		background-image: url('@/assets/bg.png');
+		// background-image: url('@/assets/bg.png');
 		background-repeat: no-repeat;
 		background-position: top right;
 		padding: 10px 20px;

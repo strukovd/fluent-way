@@ -6,6 +6,8 @@ on:
       - master
     paths:
       - 'frontend/**'  # только если что-то изменилось в директории frontend
+      - '.github/workflows/**'
+  workflow_dispatch: # включает возможность запустить вручную
 
 jobs:
   deploy:

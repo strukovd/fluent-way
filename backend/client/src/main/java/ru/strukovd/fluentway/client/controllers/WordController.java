@@ -1,4 +1,4 @@
-package ru.strukovd.fluentway.controllers;
+package ru.strukovd.fluentway.client.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

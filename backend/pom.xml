@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion> <!-- Стандартный заголовок и версия pom.xml -->
+
+    <properties>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
+<!--        <lombok.version>1.18.34</lombok.version>-->
+        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.strukovd</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <name>FluentWay</name>
+    <groupId>ru.strukovd</groupId>
+    <artifactId>fluentway</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>core</module>
+        <module>client</module>
+        <!-- <module>admin</module>-->
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>   <!-- нужен только на компиляции -->
+            <optional>true</optional> <!-- не тянуть транзитивно наружу -->
+        </dependency>
+        <dependency>
+            <!--
+                Скаирует конфиг-классы @ConfigurationProperties (генерит spring-configuration-metadata.json при компиляции).
+                Нужен только для IDE-подсказок и валидации конфигурации (application.yml)
+            -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <annotationProcessorPaths>
+<!--                            <path>-->
+<!--                                <groupId>org.springframework.boot</groupId>-->
+<!--                                <artifactId>spring-boot-configuration-processor</artifactId>-->
+<!--                                <version>3.5.5</version>-->
+<!--                            </path>-->
+                            <path> <!-- генерирует методы -->
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                            <path> <!-- "склеивает" Lombok и MapStruct (чтобы MapStruct понимал Lombok-классы) -->
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok-mapstruct-binding</artifactId>
+                                <version>${lombok-mapstruct-binding.version}</version>
+                            </path>
+                            <path> <!-- генерирует имплементации интерфейсов мапперов -->
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${org.mapstruct.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

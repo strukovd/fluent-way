@@ -1,4 +1,4 @@
-package ru.strukovd.fluentway.exceptions;
+package ru.strukovd.fluentway.client.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -16,6 +16,11 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+/* TODO:
+    по рекомендации chatGTP, вынести этот обработчик в отдельный модуль: web-common
+    т.к. он требует (jakarta.servlet) из spring-boot-starter-web, который не желательно тянуть в core
+    а сейчас его придется дублировать во все web модули (client, admin)
+ */
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationExceptions(

@@ -3,6 +3,14 @@
 </h1>
 
 
+Еще некоторые вопросы:
+стоит ли в пакете указывать имя проекта?
+
+
+Разобрать:
+
+
+
 
 Сделать:
 
@@ -17,7 +25,7 @@
 - Core
 - Client
 - Admin
-- Realtime Gateway (веб-сокеты, +возможно rabbitMQ или kafka)
+- Realtime Gateway (живые события - трафик в реальном времени, веб-сокеты для чата и отслеживания состояния форм, +возможно rabbitMQ или kafka)
 - Lucene (полнотекстовый поиск)
 - Audio-generator TTS (Text-to-Speech - синтез речи)
 - Text-generator LLM (text-generation)

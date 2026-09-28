@@ -2,6 +2,7 @@ import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule, ObserveInstrument } from './modules/app.module.js';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule, {
@@ -20,6 +21,9 @@ async function bootstrap() {
 		.build();
 	SwaggerModule.setup('api', app, () => SwaggerModule.createDocument(app, swaggerConfig));
 
-	await app.listen(process.env.PORT ?? 3000);
+	const port = app.get(ConfigService).get("PORT") ?? 3000;
+	await app.listen(port, ()=>{
+		console.log(`Приложение запущено на порту: ${port}`);
+	});
 }
 await bootstrap();

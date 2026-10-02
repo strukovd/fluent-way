@@ -1,5 +1,7 @@
 target
 
+nuxt
+
 # Logs
 logs
 *.log

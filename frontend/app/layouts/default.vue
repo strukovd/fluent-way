@@ -1,17 +1,13 @@
 <template>
 	<section class="default-layout">
 		<main>
-			<router-view/>
+			<slot></slot>
 		</main>
 	</section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 
-export default defineComponent({
-	name: 'DefaultLayout',
-});
 </script>
 
 <style lang="scss">

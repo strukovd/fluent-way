@@ -8,7 +8,7 @@
 				<Header/>
 			</header>
 			<main id="main-page">
-				<router-view :key="$route.fullPath" />
+				<slot></slot>
 			</main>
 			<footer></footer>
 		</section>

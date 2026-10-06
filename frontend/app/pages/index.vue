@@ -77,6 +77,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+definePageMeta({
+	layout: 'welcome'
+});
 
 export default defineComponent({
 	name: 'WelcomePage',

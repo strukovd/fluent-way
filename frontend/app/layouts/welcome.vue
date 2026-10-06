@@ -2,7 +2,7 @@
 	<div id="vanta-bg"></div>
 	<section class="welcome-layout">
 		<main>
-			<router-view/>
+			<slot></slot>
 		</main>
 	</section>
 </template>

@@ -8,6 +8,12 @@
 	"type": "module",
 	"scripts": {
 		"build": "nest build",
+		"db:build-entities": "tsc -p tsconfig.entities.json",
+		"db:schema:create:sql": "npm run db:build-entities && mikro-orm schema:create --dump",
+		"db:schema:sql": "npm run db:build-entities && mikro-orm schema:update --dump --safe --no-drop-tables",
+		"db:migration:create": "npm run db:build-entities && mikro-orm migration:create",
+		"db:migration:pending": "mikro-orm migration:pending",
+		"db:migration:up": "mikro-orm migration:up",
 		"deploy": "nest deploy",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
 		"start": "nest start",
@@ -22,6 +28,11 @@
 		"test:e2e": "vitest run --config ./vitest.config.e2e.ts"
 	},
 	"dependencies": {
+		"@mikro-orm/core": "^7.2.2",
+		"@mikro-orm/decorators": "^7.2.2",
+		"@mikro-orm/migrations": "^7.2.2",
+		"@mikro-orm/nestjs": "^7.1.0",
+		"@mikro-orm/postgresql": "^7.2.2",
 		"@nestjs/common": "^12.0.1",
 		"@nestjs/config": "^12.0.1",
 		"@nestjs/core": "^12.0.1",
@@ -33,6 +44,7 @@
 		"rxjs": "^7.8.1"
 	},
 	"devDependencies": {
+		"@mikro-orm/cli": "^7.2.2",
 		"@nestjs/cli": "^12.0.0",
 		"@nestjs/mau": "^0.2.6",
 		"@nestjs/schematics": "^12.0.0",
